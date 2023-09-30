@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+header{
+    padding: 16px 0px 0px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 56px;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.clear{
+    clear: both;
+}
+.menu > li{
+    float: left;
+    list-style: none;
+    padding: 16px;
+    border-top: 4px solid transparent;
+    position: relative;
+}
+.menu li:hover .submenu{
+    display: block;
+}
+.submenu{
+    display: none;
+    border: 1px solid red;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    width: 300px;
+    top: 100%;
+}
+.menu li:hover{
+    border-color: red ;
+}
+.submenu li{
+    display: block;
+    padding: 8px;
+}
+.content{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.new img{
+    width: 100%;
+}
+.highlights{
+    margin-bottom: 56px;
+}
+.highlights .new a{
+    display: flex;
+    font-size: 2em;
+}
+.highlights .new img{
+    margin-right: 8px;
+}
+section h2{
+    margin-bottom: 32px;
+}
+aside{
+    padding-left: 40px;
+}
+aside .new{
+    margin-bottom: 24px;
+}
+.news{
+    display: grid;
+    grid-template-columns: repeat(3, 32.6%);
+    column-gap: 1%;
+    row-gap: 5%;
+}
+/*Configurações da página para dispositivos com largura igual ou inferior a 767px.*/
+@media screen and (max-width: 767px) {
+    .content{
+        display: block;
+    }
+    .container{
+        max-width: 90%;
+    }
+    .highlights .new a{
+        display: block;
+        font-size: 1.5em;
+    }
+    .highlights .new img{
+        margin-right: 0;
+    }
+    .news{
+        display: block;
+    }
+    .news .new{
+        margin-bottom: 32px;
+    }
+    aside{
+        padding-left: 0;
+    }
+    header div.container{
+        flex-direction: column;
+    }
+    .menu{
+        display: none;
+    }
+    .menu, .menu > li{
+        width: 100%;
+        display: block;
+    }
+    .menu > li{
+        clear: both;
+        background-color: #333;
+    }
+    .submenu{
+        display: block;
+        width: 100%;
+        position: relative;
+        border: none;
+    }
+    .submenu li{
+        display: block;
+        padding: 8px;
+    }
+    .menu-button{
+        display: flex; 
+        justify-content: center;
+        margin-top: 16px;
+        padding-bottom: 16px;
+    }
+    .menu-button button{
+        padding: 8px;
+    }
+}
+/*Configurações para dispositivos com largura entre 768px e 1023px.*/
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .container{
+        max-width: 90%;
+    }
+    .menu-button{
+        display: none;
+    }
+    .highlights .new a{
+        font-size: 1.5em;
+    }
+    .news{
+        grid-template-columns: repeat(2, 49%);
+    }
+}
+/*Ocultando o menu para larguras acima de 1024px.*/
+@media screen and (min-width: 1024px) {
+    .menu-button{
+        display: none;
+    }
+}
